@@ -1,0 +1,24 @@
+{
+  "name": "ariadne-web-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "User-facing HTTP API for Ariadne's Thread project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariadnes-thread/ariadne-web-api.git"
+  },
+  "author": {
+    "name": "Timur Kuzhagaluyev",
+    "email": "tim.kuzh@gmail.com",
+    "url": "https://foxypanda.me/"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ariadnes-thread/ariadne-web-api/issues"
+  },
+  "homepage": "https://github.com/ariadnes-thread/ariadne-web-api#readme"
+}
