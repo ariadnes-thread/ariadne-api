@@ -1,3 +1,6 @@
+# Config
+/config.json
+
 # JetBrains IDEs, Vim swap files
 /.idea
 *.swp

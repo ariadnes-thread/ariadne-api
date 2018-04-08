@@ -1,0 +1,8 @@
+{
+  "appName": "ariadne-api-dev",
+  "appSecret": "some-secret-key",
+  "apiUrl": "https://api.ariadnes-thread.me",
+  "dbUrl": "postgre://localhost",
+  "tokenExpiration": 86400,
+  "port": 1234
+}

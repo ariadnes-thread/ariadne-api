@@ -5,6 +5,7 @@
   "description": "User-facing HTTP API for Ariadne's Thread project.",
   "main": "index.js",
   "scripts": {
+    "start": "node ./scripts/launch-api.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,18 @@
   "bugs": {
     "url": "https://github.com/ariadnes-thread/ariadne-web-api/issues"
   },
-  "homepage": "https://github.com/ariadnes-thread/ariadne-web-api#readme"
+  "homepage": "https://github.com/ariadnes-thread/ariadne-web-api#readme",
+  "devDependencies": {
+    "@types/bunyan": "^1.8.4",
+    "@types/joi": "^13.0.7",
+    "eslint": "^4.19.1",
+    "eslint-plugin-mocha": "^5.0.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "bunyan": "^1.8.12",
+    "bunyan-format": "^0.2.1",
+    "express": "^4.16.3",
+    "joi": "^13.1.2"
+  }
 }
