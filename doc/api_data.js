@@ -126,6 +126,8 @@ define({ "api": [
     "groupTitle": "v1_Auth"
   },
   {
+    "group": "v1_Planning",
+    "name": "planning_route",
     "type": "post",
     "url": "/api/v1/planning/route",
     "title": "Generate route subject to constraints",
@@ -135,8 +137,6 @@ define({ "api": [
       }
     ],
     "version": "1.0.0",
-    "group": "v1_Planning",
-    "name": "planning_route",
     "description": "<p><strong>Authorization required.</strong> Generate a route subject to specified constraints.</p>",
     "parameter": {
       "fields": {
@@ -146,7 +146,7 @@ define({ "api": [
             "type": "object",
             "optional": false,
             "field": "constraints",
-            "description": "<p>An object (collection of key-value pairs) that represent constraints that route planner should take into account.</p>"
+            "description": "<p>An object (collection of key-value pairs) that represent constraints that route planner should take into account. For now constraints are ignored.</p>"
           }
         ]
       }
@@ -186,6 +186,19 @@ define({ "api": [
       }
     },
     "filename": "lib/v1/routers/PlanningRouter.js",
-    "groupTitle": "v1_Planning"
+    "groupTitle": "v1_Planning",
+    "header": {
+      "fields": {
+        "Required headers": [
+          {
+            "group": "Required headers",
+            "type": "string",
+            "optional": false,
+            "field": "authorization",
+            "description": "<p>Authorization header of form <code>Bearer &lt;accessToken&gt;</code>.</p>"
+          }
+        ]
+      }
+    }
   }
 ] });
