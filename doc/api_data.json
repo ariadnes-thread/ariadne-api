@@ -44,7 +44,7 @@
     "version": "1.0.0",
     "group": "v1_Auth",
     "name": "auth_staff_token",
-    "description": "<p>Authenticate a test user using a username and a password.</p>",
+    "description": "<p><strong>No authorization required.</strong> Authorize a staff user using a username and a password.</p>",
     "parameter": {
       "fields": {
         "POST parameters": [
@@ -124,5 +124,68 @@
     },
     "filename": "lib/v1/routers/AuthRouter.js",
     "groupTitle": "v1_Auth"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/planning/route",
+    "title": "Generate route subject to constraints",
+    "permission": [
+      {
+        "name": "All authorized users"
+      }
+    ],
+    "version": "1.0.0",
+    "group": "v1_Planning",
+    "name": "planning_route",
+    "description": "<p><strong>Authorization required.</strong> Generate a route subject to specified constraints.</p>",
+    "parameter": {
+      "fields": {
+        "POST parameters": [
+          {
+            "group": "POST parameters",
+            "type": "object",
+            "optional": false,
+            "field": "constraints",
+            "description": "<p>An object (collection of key-value pairs) that represent constraints that route planner should take into account.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n   \"route\":[\n      {\n         \"latitude\":34.14093,\n         \"longitude\":-118.129366\n      },\n      {\n         \"latitude\":34.140947,\n         \"longitude\":-118.12801\n      },\n      {\n         \"latitude\":34.140388,\n         \"longitude\":-118.128002\n      },\n      {\n         \"latitude\":34.139434,\n         \"longitude\":-118.122862\n      }\n   ]\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object[]",
+            "optional": false,
+            "field": "route",
+            "description": "<p>An array of coordinate objects.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "route.latitude",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "route.longitude",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "lib/v1/routers/PlanningRouter.js",
+    "groupTitle": "v1_Planning"
   }
 ]
