@@ -4,5 +4,6 @@
   "apiUrl": "https://api.ariadnes-thread.me",
   "dbUrl": "postgre://localhost",
   "tokenExpiration": 86400,
-  "port": 1234
+  "routePlannerPort": 1235,
+  "apiPort": 1234
 }

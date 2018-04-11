@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./scripts/ ./test/ ./lib/",
     "start": "node ./scripts/launch-api.js",
-    "apidoc": "apidoc -i ./lib/ -o ./doc/"
+    "apidoc": "apidoc -i ./lib/ -o ./doc/",
+    "rebuild-grpc": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./ --grpc_out=./ --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` ./lib/grpc/planner.proto"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,8 @@
     "@types/joi": "^13.0.7",
     "apidoc": "^0.17.6",
     "eslint": "^4.19.1",
-    "eslint-plugin-mocha": "^5.0.0"
+    "eslint-plugin-mocha": "^5.0.0",
+    "grpc-tools": "^1.6.6"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
@@ -40,6 +42,8 @@
     "compression": "^1.7.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "google-protobuf": "^3.5.0",
+    "grpc": "^1.10.1",
     "http-errors": "^1.6.3",
     "joi": "^13.1.2"
   }
