@@ -1,7 +1,7 @@
 {
   "name": "Ariadne's Thread API documentation",
   "version": "1.0.0",
-  "description": "Summary of all available endpoints for the Ariadne's ThreadAPI.",
+  "description": "Summary of all available endpoints for the Ariadne's Thread API.",
   "title": "Ariadne's Thread API documentation",
   "url": "https://api.ariadnes-thread.me",
   "template": {
@@ -12,7 +12,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-04-08T05:15:57.981Z",
+    "time": "2018-04-11T03:23:57.358Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }

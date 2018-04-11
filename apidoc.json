@@ -2,7 +2,7 @@
   "name": "Ariadne's Thread API documentation",
   "title": "Ariadne's Thread API documentation",
   "version": "1.0.0",
-  "description": "Summary of all available endpoints for the Ariadne's ThreadAPI.",
+  "description": "Summary of all available endpoints for the Ariadne's Thread API.",
   "url": "https://api.ariadnes-thread.me",
   "template": {
     "forceLanguage": "en"
