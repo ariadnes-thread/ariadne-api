@@ -216,10 +216,17 @@ define({ "api": [
             "type": "object",
             "optional": false,
             "field": "constraints",
-            "description": "<p>An object (collection of key-value pairs) that represent constraints that route planner should take into account. Example: <code> { &quot;constraints&quot;: { &quot;origin&quot;: { &quot;longitude&quot;: -118.12780, &quot;latitude&quot;: 34.14175 }, &quot;destination&quot;: { &quot;longitude&quot;: -118.12139, &quot;latitude&quot;: 34.13612 } } } </code></p>"
+            "description": "<p>An object (collection of key-value pairs) that represent constraints that route planner should take into account.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\n {\n    \"constraints\": {\n        \"origin\": {\n            \"longitude\": -118.12780,\n            \"latitude\": 34.14175\n        },\n        \"destination\": {\n            \"longitude\": -118.12139,\n            \"latitude\": 34.13612\n        }\n    }\n}",
+          "type": "json"
+        }
+      ]
     },
     "success": {
       "examples": [
