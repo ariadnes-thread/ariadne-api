@@ -2,7 +2,8 @@
   "appName": "ariadne-api-dev",
   "appSecret": "some-secret-key",
   "apiUrl": "https://api.ariadnes-thread.me",
-  "dbUrl": "postgre://localhost",
+  "apiDbUrl": "postgre://localhost",
+  "gisDbUrl": "postgre://localhost",
   "tokenExpiration": 86400,
   "routePlannerPort": 1235,
   "apiPort": 1234

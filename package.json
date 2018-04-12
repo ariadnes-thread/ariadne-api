@@ -45,6 +45,7 @@
     "google-protobuf": "^3.5.0",
     "grpc": "^1.10.1",
     "http-errors": "^1.6.3",
-    "joi": "^13.1.2"
+    "joi": "^13.1.2",
+    "pg-promise": "^8.2.3"
   }
 }
