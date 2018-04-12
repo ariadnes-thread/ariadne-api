@@ -142,7 +142,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n   \"route\":[\n      {\n         \"latitude\":34.14093,\n         \"longitude\":-118.129366\n      },\n      {\n         \"latitude\":34.140947,\n         \"longitude\":-118.12801\n      },\n      {\n         \"latitude\":34.140388,\n         \"longitude\":-118.128002\n      },\n      {\n         \"latitude\":34.139434,\n         \"longitude\":-118.122862\n      }\n   ]\n}",
+          "content": "{\n   \"pointsOfInterest\": [\n      {\n         \"name\":\"Pasadena 10\",\n         \"latitude\":34.140975,\n         \"longitude\":-118.1243505\n      },\n      {\n         \"name\":\"Metro\",\n         \"latitude\":34.138,\n         \"longitude\":-118.1211784\n      },\n      {\n         \"name\":\"Olive Tree Condo\",\n         \"latitude\":34.1399729,\n         \"longitude\":-118.1297093\n      },\n      {\n         \"name\":\"Bechtel Mall\",\n         \"latitude\":34.1368473,\n         \"longitude\":-118.127086\n      }\n   ]\n}",
           "type": "json"
         }
       ],
@@ -216,7 +216,7 @@ define({ "api": [
             "type": "object",
             "optional": false,
             "field": "constraints",
-            "description": "<p>An object (collection of key-value pairs) that represent constraints that route planner should take into account. For now constraints are ignored.</p>"
+            "description": "<p>An object (collection of key-value pairs) that represent constraints that route planner should take into account. Example: <code> { &quot;constraints&quot;: { &quot;origin&quot;: { &quot;longitude&quot;: -118.12780, &quot;latitude&quot;: 34.14175 }, &quot;destination&quot;: { &quot;longitude&quot;: -118.12139, &quot;latitude&quot;: 34.13612 } } } </code></p>"
           }
         ]
       }
@@ -225,7 +225,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n   \"route\":[\n      {\n         \"latitude\":34.14093,\n         \"longitude\":-118.129366\n      },\n      {\n         \"latitude\":34.140947,\n         \"longitude\":-118.12801\n      },\n      {\n         \"latitude\":34.140388,\n         \"longitude\":-118.128002\n      },\n      {\n         \"latitude\":34.139434,\n         \"longitude\":-118.122862\n      }\n   ]\n}",
+          "content": "{\n   \"route\": {\n       \"type\": \"LineString\",\n       \"coordinates\": [\n           [\n               -118.1280149,\n               34.141899\n           ],\n           [\n               -118.1259376,\n               34.1419191\n           ],\n           [\n               -118.1259364,\n               34.1409536\n           ]\n       ]\n   },\n   \"length\": 1261.67188402488\n}",
           "type": "json"
         }
       ],
@@ -233,24 +233,38 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "object[]",
+            "type": "object",
             "optional": false,
             "field": "route",
+            "description": "<p>A GeoJSON object</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object[]",
+            "optional": false,
+            "field": "route.coordinates",
             "description": "<p>An array of coordinate objects.</p>"
           },
           {
             "group": "Success 200",
             "type": "number",
             "optional": false,
-            "field": "route.latitude",
+            "field": "route.coordinates.latitude",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "number",
             "optional": false,
-            "field": "route.longitude",
+            "field": "route.coordinates.longitude",
             "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "length",
+            "description": "<p>Length of route in meters</p>"
           }
         ]
       }
