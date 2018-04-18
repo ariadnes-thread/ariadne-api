@@ -25,6 +25,9 @@
     "url": "https://github.com/ariadnes-thread/ariadne-web-api/issues"
   },
   "homepage": "https://github.com/ariadnes-thread/ariadne-web-api#readme",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "devDependencies": {
     "@types/bunyan": "^1.8.4",
     "@types/http-errors": "^1.6.1",
