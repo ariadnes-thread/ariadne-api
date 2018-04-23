@@ -91,35 +91,35 @@ define({ "api": [
             "group": "Success 200",
             "type": "object",
             "optional": false,
-            "field": "user",
+            "field": "userData",
             "description": "<p>Basic user data</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "user.userId",
+            "field": "userData.userId",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "user.firstName",
+            "field": "userData.firstName",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "user.lastName",
+            "field": "userData.lastName",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "user.email",
+            "field": "userData.email",
             "description": ""
           }
         ]
@@ -290,6 +290,96 @@ define({ "api": [
     },
     "filename": "lib/v1/routers/PlanningRouter.js",
     "groupTitle": "v1_Planning",
+    "header": {
+      "fields": {
+        "Required headers": [
+          {
+            "group": "Required headers",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization header of form <code>Bearer &lt;accessToken&gt;</code>.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "group": "v1_Users",
+    "name": "users_profile",
+    "type": "get",
+    "url": "/api/v1/users/<userId>/profile",
+    "title": "Get user profile",
+    "permission": [
+      {
+        "name": "Owner of the profile"
+      }
+    ],
+    "version": "1.0.0",
+    "description": "<p><strong>Authorization required.</strong> Get basic information about the user. You can only fetch your own profile.</p>",
+    "parameter": {
+      "fields": {
+        "GET parameters": [
+          {
+            "group": "GET parameters",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>ID of the user whose profile you want to fetch.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"userData\": {\n    \"userId\": \"abcdefgh-1234-5678-9101-qwert12345xy\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\"\n    \"email\": \"john@example.com\"\n  }\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "userData",
+            "description": "<p>Basic user data</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "userData.userId",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "userData.firstName",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "userData.lastName",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "userData.email",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "lib/v1/routers/UserRouter.js",
+    "groupTitle": "v1_Users",
     "header": {
       "fields": {
         "Required headers": [
