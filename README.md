@@ -31,6 +31,8 @@ All of the database manipulations (in Node.js code) are done through `lib/db/Api
 
 The `db-setup/` directory contains an SQL schema that can be used for initial setup of the API. The system depends on PostgreSQL as the database software, with `uuid-ossp` extension installed (used to automatically generate UUID v4).
 
+**Important:** Column names returned from the database are automatically converted into `camelCase` before they are exposed to JavaScript. For example, the results of query `SELECT date_created, first_post_id FROM table` will be available through properties `row.dateCreated` and `data.firstPostId`.
+
 # Rebuilding gRPC code
 
 After editing `lib/grpc/planner.proto` you can rebuild relevant Node.js code using:

@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./scripts/ ./test/ ./lib/",
     "start": "node ./scripts/launch-api.js",
+    "add-user": "node ./scripts/add-user.js",
     "apidoc": "apidoc -i ./lib/ -o ./doc/",
     "rebuild-grpc": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./ --grpc_out=./ --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` ./lib/grpc/planner.proto"
   },
@@ -49,6 +50,8 @@
     "grpc": "^1.10.1",
     "http-errors": "^1.6.3",
     "joi": "^13.1.2",
-    "pg-promise": "^8.2.3"
+    "jsonwebtoken": "^8.2.1",
+    "pg-promise": "^8.2.3",
+    "prompt-sync": "^4.1.6"
   }
 }

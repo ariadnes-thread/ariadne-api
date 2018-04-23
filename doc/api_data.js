@@ -44,7 +44,12 @@ define({ "api": [
     "version": "1.0.0",
     "group": "v1_Auth",
     "name": "auth_staff_token",
-    "description": "<p><strong>No authorization required.</strong> Authorize a staff user using a username and a password.</p>",
+    "sampleRequest": [
+      {
+        "url": "/api/v1/auth/staff-login"
+      }
+    ],
+    "description": "<p><strong>No authorization required.</strong> Authorize a staff user using a email and a password.</p>",
     "parameter": {
       "fields": {
         "POST parameters": [
@@ -52,7 +57,7 @@ define({ "api": [
             "group": "POST parameters",
             "type": "string",
             "optional": false,
-            "field": "username",
+            "field": "email",
             "description": ""
           },
           {
@@ -69,7 +74,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"accessToken\": \"12345678910\",\n  \"userData\": {\n    \"userId\": \"12345678910\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\"\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"accessToken\": \"eyJhbGciOiJIUzI1NiIsICJ9.eyJzdWIiOiIxMjM0NTY3OSI6IkpvE2MjM5MDIyfQ.XbPfbIHMI6arZ3Y922o\",\n  \"userData\": {\n    \"userId\": \"abcdefgh-1234-5678-9101-qwert12345xy\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\"\n    \"email\": \"john@example.com\"\n  }\n}",
           "type": "json"
         }
       ],
@@ -109,6 +114,13 @@ define({ "api": [
             "optional": false,
             "field": "user.lastName",
             "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "user.email",
+            "description": ""
           }
         ]
       }
@@ -117,7 +129,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 400 Bad Request\n{\n  \"error\": {\n    \"status\": 400,\n    \"name\": \"BadRequestError\",\n    \"message\": \"Parameter validation error: \\\"username\\\" is required.\"\n  }\n}",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"error\": {\n    \"status\": 400,\n    \"name\": \"BadRequestError\",\n    \"message\": \"Parameter validation error: \\\"email\\\" is required.\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -188,7 +200,7 @@ define({ "api": [
             "group": "Required headers",
             "type": "string",
             "optional": false,
-            "field": "authorization",
+            "field": "Authorization",
             "description": "<p>Authorization header of form <code>Bearer &lt;accessToken&gt;</code>.</p>"
           }
         ]
@@ -285,7 +297,7 @@ define({ "api": [
             "group": "Required headers",
             "type": "string",
             "optional": false,
-            "field": "authorization",
+            "field": "Authorization",
             "description": "<p>Authorization header of form <code>Bearer &lt;accessToken&gt;</code>.</p>"
           }
         ]
