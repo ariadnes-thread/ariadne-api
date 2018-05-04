@@ -145,11 +145,11 @@
     "title": "Get list of points of interest",
     "permission": [
       {
-        "name": "All authorized users"
+        "name": "Everyone"
       }
     ],
     "version": "1.0.0",
-    "description": "<p><strong>Authorization required.</strong> Get an array with all points of interest. These points can be used as origin/destination suggestions.</p>",
+    "description": "<p><strong>No authorization required.</strong> Get an array with all points of interest. These points can be used as origin/destination suggestions.</p>",
     "success": {
       "examples": [
         {
@@ -192,20 +192,7 @@
       }
     },
     "filename": "lib/v1/routers/PlanningRouter.js",
-    "groupTitle": "v1_Planning",
-    "header": {
-      "fields": {
-        "Required headers": [
-          {
-            "group": "Required headers",
-            "type": "string",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Authorization header of form <code>Bearer &lt;accessToken&gt;</code>.</p>"
-          }
-        ]
-      }
-    }
+    "groupTitle": "v1_Planning"
   },
   {
     "group": "v1_Planning",
@@ -215,11 +202,11 @@
     "title": "Generate route subject to constraints",
     "permission": [
       {
-        "name": "All authorized users"
+        "name": "Everyone"
       }
     ],
     "version": "1.0.0",
-    "description": "<p><strong>Authorization required.</strong> Generate a route subject to specified constraints.</p>",
+    "description": "<p><strong>No authorization required.</strong> Generate a route subject to specified constraints.</p>",
     "parameter": {
       "fields": {
         "POST parameters": [
@@ -289,20 +276,7 @@
       }
     },
     "filename": "lib/v1/routers/PlanningRouter.js",
-    "groupTitle": "v1_Planning",
-    "header": {
-      "fields": {
-        "Required headers": [
-          {
-            "group": "Required headers",
-            "type": "string",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Authorization header of form <code>Bearer &lt;accessToken&gt;</code>.</p>"
-          }
-        ]
-      }
-    }
+    "groupTitle": "v1_Planning"
   },
   {
     "group": "v1_Users",
